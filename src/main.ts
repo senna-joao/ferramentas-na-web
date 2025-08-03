@@ -19,10 +19,22 @@ const updateValue = () => {
 
 const createAddButton = (buttonsDiv: HTMLElement) => {
 	const button = document.createElement('button')
-	button.setAttribute('class', 'btn btn-primary col-lg-3 col-12 my-2 me-2')
-	button.innerHTML = 'Add'
+	button.setAttribute('class', 'btn btn-success col-lg-3 col-12 my-2 me-2')
+	button.innerHTML = '+'
 	button.addEventListener('click', () => {
 		contValue++
+		updateValue()
+	})
+
+	buttonsDiv.appendChild(button)
+}
+
+const createSubButton = (buttonsDiv: HTMLElement) => {
+	const button = document.createElement('button')
+	button.setAttribute('class', 'btn btn-primary col-lg-3 col-12 my-2 me-2')
+	button.innerHTML = '-'
+	button.addEventListener('click', () => {
+		contValue--
 		updateValue()
 	})
 
@@ -49,6 +61,7 @@ const createButtonsDiv = () => {
 	mainDiv?.appendChild(upperDiv)
 	
 	createAddButton(buttonsDiv)
+	createSubButton(buttonsDiv)
 	createResetButton(buttonsDiv)
 }
 
