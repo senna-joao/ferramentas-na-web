@@ -1,4 +1,4 @@
-const mainDiv = document.querySelector('#main')
+let mainDiv: Element 
 
 let contValue = 0
 
@@ -54,12 +54,7 @@ const createButtonsDiv = () => {
 	createButton(buttonsDiv, 'Reset', 'btn btn-danger col-lg-3 col-12 my-2', validKeys.get('Delete')!)
 }
 
-const createTitle = () => {
-	const title = document.createElement('h2')
-	title.setAttribute('class', 'justify-text-center')
-	title.innerHTML = 'Contador'
-	mainDiv?.appendChild(title)
-}
+
 
 const keyBoardEventHandler = (event: KeyboardEvent) => {
 	const key = event.key
@@ -68,8 +63,8 @@ const keyBoardEventHandler = (event: KeyboardEvent) => {
 }
 
 
-export const contador = () => {
-	createTitle()
+export const contador = (div: Element) => {
+	mainDiv = div  
 	inputFieldCreator()
 	createButtonsDiv()
 

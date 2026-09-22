@@ -1,2 +1,2 @@
-export declare const contador: () => void;
+export declare const contador: (div: Element) => void;
 //# sourceMappingURL=contador.d.ts.map
